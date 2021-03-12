@@ -1,0 +1,12 @@
+version: "2.4"
+services:
+  lgsm:
+    #image: gameservermanagers/linuxgsm-docker
+    build: ./
+    tty: true #optional
+    stdin_open: true #optional
+    network_mode: host
+    # in case you create your directory with ownership 750:1000 
+    #user: 750:1000 # 1000 is the placeholder for userid. If you write your userid and add write permission for group your user will be able to edit files
+    volumes:
+      - ./lgsm:/home/linuxgsm
